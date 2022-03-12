@@ -22,20 +22,20 @@ import math
 
 def smallest_subarray_with_given_sum(s, arr):
     sum, start = 0, 0
-    len = math.inf
-    for end in range(0, len(arr)):
+    length = math.inf
+    for end in range(0, length(arr)):
         sum += arr[end]
         while sum >= s:
-            len = min(end - start+1, len)
+            length = min(end - start+1, length)
             sum -= arr[start]
             start += 1
-    if sum == math.inf:
+    if length == math.inf:
         return 0
-    return len
+    return length
 
 
 def main():
-    length = smallest_subarray_with_given_sum(7, [2, 1, 5, 2, 8])
+    length = int(smallest_subarray_with_given_sum(7, [2, 1, 5, 2, 8]))
     print(length)
 
 
