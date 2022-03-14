@@ -13,18 +13,21 @@
 # Explanation: Subarray with maximum sum is [3, 4].
 
 def max_subarray_size_k(array, k):
-    sum,temp = 0,0
+    max_sum, sum = 0, 0
     window_start = 0
     for window_end in range(len(array)):
-        temp += array[window_end]
+        sum += array[window_end]
+        # We don't need to increase when we hit the k. We have to increase by 1 each time after end > k-1
         if window_end >= k-1:
-            sum = max(sum,temp)
-            temp -= array[window_start]
+            max_sum = max(max_sum, sum)
+            sum -= array[window_start]
             window_start += 1
-    return sum
+    return max_sum
+
 
 def main():
-    sum  = max_subarray_size_k([2,1,5,1,3,2], 3)
-    print(sum)
+    max_sum = max_subarray_size_k([2, 1, 5, 1, 3, 2], 3)
+    print(max_sum)
+
 
 main()

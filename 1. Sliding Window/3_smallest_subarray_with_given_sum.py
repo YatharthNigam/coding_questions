@@ -26,7 +26,7 @@ def smallest_subarray_with_given_sum(s, arr):
     for end in range(0, length(arr)):
         sum += arr[end]
         while sum >= s:
-            length = min(end - start+1, length)
+            length = min(end - start + 1, length)
             sum -= arr[start]
             start += 1
     if length == math.inf:

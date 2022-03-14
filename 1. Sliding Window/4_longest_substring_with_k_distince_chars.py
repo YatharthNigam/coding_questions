@@ -35,7 +35,7 @@ def longest_substring_with_k_distinct(str, k):
             start += 1
 
         # remember the max length
-        max_length = max(max_length, end - start+1)
+        max_length = max(max_length, end - start + 1)
     return max_length
 
 
